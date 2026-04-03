@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./data:/app/data
+      - ./sqlite_db:/app/sqlite_db
+      - ./src:/app/src
+    env_file:
+      - .env
